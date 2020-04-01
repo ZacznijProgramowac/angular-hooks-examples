@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, OnDestroy } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { OnChangesComponent } from './on-changes/on-changes.component';
@@ -21,6 +21,9 @@ import { ViewComponent } from './after-view-init/view/view.component';
 import { NgDestroyComponent } from './ng-destroy/ng-destroy.component';
 import { HooksComponent } from './hooks/hooks.component';
 import { AllHooksComponent } from './hooks/all-hooks/all-hooks.component';
+import { ComponetnAComponent } from './ExpressionChangedAfterItHasBeenCheckedError/componetn-a.component';
+import { ComponentBComponent } from './ExpressionChangedAfterItHasBeenCheckedError/component-b/component-b.component';
+import { ErrorCheckedComponent } from './ExpressionChangedAfterItHasBeenCheckedError2/error-checked.component';
 
 const routes: Routes = [
   {
@@ -59,6 +62,14 @@ const routes: Routes = [
     path: 'on-destroy',
     component: NgDestroyComponent,
   },
+  {
+    path: 'error',
+    component: ComponetnAComponent,
+  },
+  {
+    path: 'error2',
+    component: ErrorCheckedComponent,
+  },
 ];
 
 @NgModule({
@@ -81,9 +92,13 @@ const routes: Routes = [
     NgDestroyComponent,
     HooksComponent,
     AllHooksComponent,
+    ComponetnAComponent,
+    ComponentBComponent,
+    ErrorCheckedComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(routes), FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}
